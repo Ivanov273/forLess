@@ -28,18 +28,26 @@
 <p class="center-img"></p>
 <script >
 
+    function expandedForm(num) {
+        // Your code here
+        let numStr = num.toString().split('');
+console.log(numStr)
+        for(let i = 0 ; i < numStr.length; i++ ){
 
-    function divisors(integer) {
-        let r = [ ]
-        for(let i = 2; i<integer; i++){
-            if(integer%i == 0) r.push(i)
+            for(let y = numStr.length - i; y > 1; y--){
+                numStr[i] += '0';
+                // console.log(y);  use this to debug y, and no y value print out from console
+            }
         }
-        let res = r.length!== 0 ? r : `${integer} cascascasc`
-        return console.log(res)
-        //return console.log(res)
 
+
+        numStr = numStr.filter(value => !value.startsWith(0));
+        return numStr.join(' + ')
     }
-    divisors(15)
+
+    console.log(expandedForm(23))
+    //expandedForm(27)
+
 
 </script>
 <p> class="fig">
