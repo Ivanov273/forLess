@@ -28,26 +28,16 @@
 <p class="center-img"></p>
 <script >
 
-    function expandedForm(num) {
-        // Your code here
-        let numStr = num.toString().split('');
-console.log(numStr)
-        for(let i = 0 ; i < numStr.length; i++ ){
-
-            for(let y = numStr.length - i; y > 1; y--){
-                numStr[i] += '0';
-                // console.log(y);  use this to debug y, and no y value print out from console
-            }
-        }
-
-
-        numStr = numStr.filter(value => !value.startsWith(0));
-        return numStr.join(' + ')
+    function createPhoneNumber(numbers){
+        let one = numbers.toString().replace(/[\s.,%]/g, '').slice(0,3)
+        let twoo = numbers.toString().replace(/[\s.,%]/g, '').slice(3,6)
+        let three = numbers.toString().replace(/[\s.,%]/g, '').slice(6,10)
+console.log(`(${one}) `)
+console.log(three)
+        let res = `(${one}) ${twoo}-${three}`
+        console.log(res)
     }
-
-    console.log(expandedForm(23))
-    //expandedForm(27)
-
+    createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) //"(123) 456-7890"  (123) 456-7890
 
 </script>
 <p> class="fig">
